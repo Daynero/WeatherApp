@@ -553,6 +553,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3766086816036233568}
   - component: {fileID: 2682399955684206328}
+  - component: {fileID: 592385815056798241}
+  - component: {fileID: 1032757091350755169}
+  - component: {fileID: 2523968036966899460}
   m_Layer: 5
   m_Name: SettingsPanel
   m_TagString: Untagged
@@ -593,11 +596,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96dcf4839efd44fe8353409e74af6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closeButton: {fileID: 1321620600580152151}
-  showIntroductionButton: {fileID: 5972858262184348951}
-  musicToggle: {fileID: 813797850552507935}
-  soundToggle: {fileID: 6340474599639705986}
-  volumeSlider: {fileID: 3011119011880541677}
+  <MusicToggle>k__BackingField: {fileID: 813797850552507935}
+  <SoundToggle>k__BackingField: {fileID: 6340474599639705986}
+  <VolumeSlider>k__BackingField: {fileID: 3011119011880541677}
+  <ShowIntroductionButton>k__BackingField: {fileID: 5972858262184348951}
+  <CloseButton>k__BackingField: {fileID: 1321620600580152151}
+--- !u!223 &592385815056798241
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047833053566084637}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &1032757091350755169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047833053566084637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!114 &2523968036966899460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047833053566084637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &3505771499779283958
 GameObject:
   m_ObjectHideFlags: 0

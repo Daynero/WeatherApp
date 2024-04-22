@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PanelsNavigationModule
 {
-    [CreateAssetMenu(fileName = "PanelDatabase", menuName = "ScriptableObjects/Panels/PanelDatabase", order = 101)]
+    [CreateAssetMenu(fileName = "PanelDatabase", menuName = "SO/PanelDatabase", order = 101)]
     public class PanelDatabase : ScriptableObject
     {
 #pragma warning disable 649

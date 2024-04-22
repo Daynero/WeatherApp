@@ -1,17 +1,19 @@
 using Infrastructure;
 using Infrastructure.States;
 using Logic.UI.Curtain;
+using PanelsNavigationModule;
 using UnityEngine;
 
 public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
 {
-    [SerializeField] private LoadingCurtain curtain;
+    [SerializeField] private UiModuleMono uiModuleMono;
     
     private Game _game;
 
     private void Awake()
     {
-        _game = new Game(this, curtain);
+        IUiModuleService uiModuleService = new UiModuleCore(uiModuleMono);
+        _game = new Game(this, uiModuleService);
         _game.StateMachine.Enter<BootstrapState>();
 
         DontDestroyOnLoad(this);

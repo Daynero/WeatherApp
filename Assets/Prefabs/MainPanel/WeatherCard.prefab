@@ -34,10 +34,10 @@ RectTransform:
   - {fileID: 8999641638999941565}
   m_Father: {fileID: 1842439362440050004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000011444, y: -245.0958}
-  m_SizeDelta: {x: 258.6992, y: 256.8798}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 260.8765, y: 307.9366}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &831992292131731842
 CanvasRenderer:
@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 7387519632385056995}
   - component: {fileID: 2505210567831069182}
   - component: {fileID: 3682942042926724200}
+  - component: {fileID: 5268340337175991378}
   m_Layer: 5
   m_Name: WeatherCard
   m_TagString: Untagged
@@ -117,7 +118,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3224993271003516488
 MonoBehaviour:
@@ -217,6 +218,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5268340337175991378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234637406913407488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 300
+  m_PreferredHeight: 450
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &2724434333012637572
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,8 +348,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 16.850891, y: 70.31418}
-  m_SizeDelta: {x: -33.7018, y: -140.6283}
+  m_AnchoredPosition: {x: 14.937, y: 70.31418}
+  m_SizeDelta: {x: -29.873, y: -140.6283}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3496690336971637633
 CanvasRenderer:
@@ -385,7 +406,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 104.05
+  m_fontSize: 149.75
   m_fontSizeBase: 172
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -459,10 +480,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4369788979879962245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.00019455, y: 70.314}
-  m_SizeDelta: {x: 258.7, y: 140.63}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -0.00019836426, y: 70.314}
+  m_SizeDelta: {x: -1.2999878, y: 140.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5316376311523821972
 CanvasRenderer:
@@ -535,10 +556,10 @@ RectTransform:
   - {fileID: 5448724939505290948}
   m_Father: {fileID: 1842439362440050004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444, y: 141.34}
-  m_SizeDelta: {x: 258.6992, y: 67.288}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -0.0032501, y: -65}
+  m_SizeDelta: {x: 260.87, y: 74.5141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2587336955872215972
 CanvasRenderer:

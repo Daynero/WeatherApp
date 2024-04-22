@@ -8,7 +8,7 @@ namespace Weather
     public class WeatherController : MonoBehaviour
     {
         [SerializeField] private WeatherCard weatherCardPrefab;
-        [SerializeField] private Transform cardParent;
+        [SerializeField] private List<Transform> cardParents;
         [SerializeField] private WeatherIconsDatabase weatherIconsDatabase;
         [SerializeField] private int numberOfCards = 9;
 
@@ -20,17 +20,19 @@ namespace Weather
             _weatherAPIController = new();
         }
 
-        private void Start()
-        {
-            CreateOrActivateCards();
-        }
-
         public void CreateOrActivateCards()
         {
             if (_weatherCardsPool.Count == 0)
             {
                 for (int i = 0; i < numberOfCards; i++)
                 {
+                    Transform cardParent = i switch
+                    {
+                        >= 0 and <= 2 => cardParents[0],
+                        > 2 and < 6 => cardParents[1],
+                        _ => cardParents[2]
+                    };
+                    
                     WeatherCard card = Instantiate(weatherCardPrefab, cardParent);
                     _weatherCardsPool.Add(card);
                     InitCard(card);
@@ -47,7 +49,7 @@ namespace Weather
             SetInfoForActiveCards();
         }
 
-        public void SetInfoForActiveCards()
+        private void SetInfoForActiveCards()
         {
             for (int i = 0; i < _weatherCardsPool.Count; i++)
             {
@@ -88,6 +90,16 @@ namespace Weather
             card.OnButtonClick += () => DeactivateCard(card.gameObject);
         }
 
+        public void ResetCards()
+        {
+            foreach (var card in _weatherCardsPool)
+            {
+                card.gameObject.SetActive(true);
+            }
+
+            SetInfoForActiveCards();
+        }
+        
         private void DeactivateCard(GameObject card)
         {
             card.SetActive(false);

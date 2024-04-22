@@ -1,6 +1,7 @@
 using Infrastructure.Services;
 using Infrastructure.States;
 using Logic.UI.Curtain;
+using PanelsNavigationModule;
 
 namespace Infrastructure
 {
@@ -8,9 +9,9 @@ namespace Infrastructure
     {
         public readonly GameStateMachine StateMachine;
 
-        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain curtain)
+        public Game(ICoroutineRunner coroutineRunner, IUiModuleService uiModuleService)
         {
-            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), curtain, AllServices.Container);
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), AllServices.Container, uiModuleService);
         }
     }
 }

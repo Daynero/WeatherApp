@@ -1,5 +1,3 @@
-using Infrastructure.AssetManagement;
-using Infrastructure.Factory;
 using Infrastructure.Services;
 using PanelsNavigationModule;
 
@@ -8,17 +6,19 @@ namespace Infrastructure.States
     public class BootstrapState : IState
     {
         private const string Initial = "Initial"; 
-        private const string GameScene = "GameScene";
+        private const string IntroScene = "IntroScene"; 
         
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly AllServices _services;
+        private readonly IUiModuleService _uiModuleService;
 
-        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader, AllServices services)
+        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader, AllServices services, IUiModuleService uiModuleService)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
             _services = services;
+            _uiModuleService = uiModuleService;
             
             RegisterServices();
         }
@@ -33,14 +33,11 @@ namespace Infrastructure.States
         }
 
         private void EnterLoadLevel() =>
-            _stateMachine.Enter<LoadLevelState, string>(GameScene);
+            _stateMachine.Enter<LoadIntroState, string>(IntroScene);
 
         private void RegisterServices()
         {
-            _services.RegisterSingle<IAssets>(new Assets());
-            _services.RegisterSingle<IPanelController>(new UiModuleCore());
-            _services.RegisterSingle<IGameFactory>(
-                new GameFactory(_services.Single<IAssets>()));
+            _services.RegisterSingle<IUiModuleService>(_uiModuleService);
         }
     }
 }

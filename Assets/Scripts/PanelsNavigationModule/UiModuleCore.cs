@@ -4,7 +4,7 @@ using Object = UnityEngine.Object;
 
 namespace PanelsNavigationModule
 {
-    public class UiModuleCore
+    public class UiModuleCore : IUiModuleService
     {
         public event Action<PanelType> OnPanelOpenedEvent;
         public event Action<PanelType> OnPanelDisposedEvent;
@@ -16,30 +16,24 @@ namespace PanelsNavigationModule
         private readonly List<IPanelController> _panelControllerList = new();
         private readonly Dictionary<PanelType, bool> _panelsStateDictionary = new()
         {
-            {PanelType.Menu, true},
-            {PanelType.Hangar, true},
-            {PanelType.Store, true},
+            {PanelType.Main, true},
             {PanelType.Settings, false},
-            {PanelType.Pause, false},
-            {PanelType.Splash, true},
-            {PanelType.Result, true},
-            {PanelType.EndGame, true},
-            {PanelType.Game, true},
-            {PanelType.CurrencyPopup, false},
+            {PanelType.Info, false},
+            {PanelType.Intro, true},
         };
 
         private PanelProvider _panelProvider;
 
         public UiModuleCore(UiModuleMono uiModuleMono)
         {
-            _uiModuleMono = Object.Instantiate(uiModuleMono);
+            _uiModuleMono = uiModuleMono;
             
             Init();
         }
 
         private void Init()
         {
-            _panelProvider = new PanelProvider(_uiModuleMono.PanelDatabase, _uiModuleMono.ParentTransform);
+            _panelProvider = new PanelProvider(_uiModuleMono.PanelDatabase);
         }
 
         public void Show(PanelType panelType)
