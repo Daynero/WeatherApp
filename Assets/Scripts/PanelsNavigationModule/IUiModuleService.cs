@@ -1,9 +1,8 @@
 using System;
-using Infrastructure.Services;
 
 namespace PanelsNavigationModule
 {
-    public interface IUiModuleService : IService
+    public interface IUiModuleService
     {
         event Action<PanelType> OnPanelOpenedEvent;
         event Action<PanelType> OnPanelDisposedEvent;

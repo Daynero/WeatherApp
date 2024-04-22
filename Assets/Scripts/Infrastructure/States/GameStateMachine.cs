@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Infrastructure.Services;
-using Logic.UI.Curtain;
 using PanelsNavigationModule;
 
 namespace Infrastructure.States
@@ -11,11 +9,11 @@ namespace Infrastructure.States
         private readonly Dictionary<Type,IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader, AllServices services, IUiModuleService uiModuleService)
+        public GameStateMachine(SceneLoader sceneLoader, IUiModuleService uiModuleService)
         {
             _states = new Dictionary<Type, IExitableState>
             {
-                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services, uiModuleService),
+                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, uiModuleService),
                 [typeof(LoadIntroState)] = new LoadIntroState(this, sceneLoader, uiModuleService),
                 [typeof(LoadAppState)] = new LoadAppState(this, sceneLoader, uiModuleService),
                 [typeof(GameLoopState)] = new GameLoopState(this)

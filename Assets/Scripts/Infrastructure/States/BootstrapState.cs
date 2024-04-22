@@ -1,4 +1,3 @@
-using Infrastructure.Services;
 using PanelsNavigationModule;
 
 namespace Infrastructure.States
@@ -10,17 +9,13 @@ namespace Infrastructure.States
         
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
-        private readonly AllServices _services;
         private readonly IUiModuleService _uiModuleService;
 
-        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader, AllServices services, IUiModuleService uiModuleService)
+        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader, IUiModuleService uiModuleService)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
-            _services = services;
             _uiModuleService = uiModuleService;
-            
-            RegisterServices();
         }
 
         public void Enter()
@@ -34,10 +29,5 @@ namespace Infrastructure.States
 
         private void EnterLoadLevel() =>
             _stateMachine.Enter<LoadIntroState, string>(IntroScene);
-
-        private void RegisterServices()
-        {
-            _services.RegisterSingle<IUiModuleService>(_uiModuleService);
-        }
     }
 }

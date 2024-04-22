@@ -1,6 +1,4 @@
-using Infrastructure.Services;
 using Infrastructure.States;
-using Logic.UI.Curtain;
 using PanelsNavigationModule;
 
 namespace Infrastructure
@@ -11,7 +9,7 @@ namespace Infrastructure
 
         public Game(ICoroutineRunner coroutineRunner, IUiModuleService uiModuleService)
         {
-            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), AllServices.Container, uiModuleService);
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), uiModuleService);
         }
     }
 }
