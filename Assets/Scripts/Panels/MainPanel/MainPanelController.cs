@@ -24,7 +24,7 @@ namespace Panels.MainPanel
             _panelMono.ResetButton.WhenClicked(ResetCards);
             _panelMono.Scroll.StartAutoScrolling();
             _panelMono.WeatherController.CreateOrActivateCards();
-            OnPanelRequested(PanelType.Info);
+            _panelMono.OnStart += () => OnPanelRequested(PanelType.Info);
         }
 
         private void ResetCards()

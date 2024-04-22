@@ -14,6 +14,13 @@ namespace Panels.MainPanel
         [field: SerializeField] public WeatherController WeatherController { get; private set; }
         [field: SerializeField] public AdvertisingScroll Scroll { get; private set; }
 
+        public event Action OnStart;
+
         public override PanelType PanelType => PanelType.Main;
+
+        private void Start()
+        {
+            OnStart?.Invoke();
+        }
     }
 }
