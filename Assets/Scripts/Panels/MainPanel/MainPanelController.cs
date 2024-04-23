@@ -23,13 +23,13 @@ namespace Panels.MainPanel
             _panelMono.ExitButton.WhenClicked(CloseApplication);
             _panelMono.ResetButton.WhenClicked(ResetCards);
             _panelMono.Scroll.StartAutoScrolling();
-            _panelMono.WeatherController.CreateOrActivateCards();
-            _panelMono.OnStart += () => OnPanelRequested(PanelType.Info);
+            _panelMono.WeatherController.CreateCards();
+            _panelMono.OnStart += OpenInfoPanel;
         }
 
         private void ResetCards()
         {
-            _panelMono.WeatherController.ResetCards();
+            _panelMono.WeatherController.CreateNewCards();
         }
 
         private void CloseApplication()
@@ -39,6 +39,11 @@ namespace Panels.MainPanel
 #else
             Application.Quit();
 #endif
+        }
+
+        private void OpenInfoPanel()
+        {
+            OnPanelRequested(PanelType.Info);
         }
 
         private void OpenSettings()

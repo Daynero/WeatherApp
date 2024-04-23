@@ -13,6 +13,8 @@ namespace Weather
         [SerializeField] private Button selfButton;
 
         public event Action OnButtonClick;
+        
+        public (float, float) LatAndLon { get; private set; }
 
         private void Awake()
         {
@@ -21,6 +23,7 @@ namespace Weather
 
         public void UpdateView(WeatherViewData weatherViewData)
         {
+            LatAndLon = (weatherViewData.Lat, weatherViewData.Lon);
             cityName.text = weatherViewData.Name;
             temperature.text = weatherViewData.Temp + "\u00b0";
             icon.sprite = weatherViewData.Icon;

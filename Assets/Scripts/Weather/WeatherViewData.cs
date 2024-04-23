@@ -7,5 +7,7 @@ namespace Weather
         public string Name;
         public string Temp;
         public Sprite Icon;
+        public float Lat;
+        public float Lon;
     }
 }

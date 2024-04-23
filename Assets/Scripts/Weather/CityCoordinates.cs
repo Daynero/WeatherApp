@@ -2,8 +2,7 @@ namespace Weather
 {
     public class CityCoordinates
     {
-        public static readonly float[,] Cities = new float[,]
-        {
+        public static readonly float[,] Cities = {
             {50.4501f, 30.5234f},  // Kyiv
             {49.8397f, 24.0297f},  // Lviv
             {46.4825f, 30.7233f},  // Odesa
